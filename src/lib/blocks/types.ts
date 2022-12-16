@@ -14,3 +14,10 @@ export type text = {
 export type image = {
    src: string;
 };
+
+export type portfolio = {
+   structure: block[];
+   colors: string[];
+   texts: text[];
+   images: image[];
+};
