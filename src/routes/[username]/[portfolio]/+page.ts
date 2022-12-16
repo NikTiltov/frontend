@@ -9,7 +9,7 @@ import {
 
 export const load: PageLoad = (({ params }) => {
    return {
-      struct: default_struct,
+      structure: default_struct,
       colors: default_colors,
       texts: default_texts,
       images: default_images,

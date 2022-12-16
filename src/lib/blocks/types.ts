@@ -1,6 +1,6 @@
 export type element = {
    type: string;
-   id: number;
+   index: number;
 }
 
 export type block = element[];

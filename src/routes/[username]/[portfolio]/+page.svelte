@@ -16,14 +16,14 @@
 </script>
 
 <div class="view">
-   {#each data.struct as block}
+   {#each data.structure as block}
       <Block>
          {#each block as element}
          <Element>
             {#if element.type === "text"}
-               <TextElement data={data.texts[element.id]}></TextElement>
+               <TextElement data={data.texts[element.index]}></TextElement>
             {:else if element.type === "image"}
-               <ImageElement data={data.images[element.id]}></ImageElement>
+               <ImageElement data={data.images[element.index]}></ImageElement>
             {/if}
          </Element>
          {/each}

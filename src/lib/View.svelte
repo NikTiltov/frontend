@@ -17,9 +17,9 @@
          {#each block as element}
          <Element>
             {#if element.type === "text"}
-               <TextEditElement data={texts[element.id]}></TextEditElement>
+               <TextEditElement data={texts[element.index]}></TextEditElement>
             {:else if element.type === "image"}
-               <ImageElement data={images[element.id]}></ImageElement>
+               <ImageElement data={images[element.index]}></ImageElement>
             {/if}
          </Element>
          {/each}
