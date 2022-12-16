@@ -15,23 +15,30 @@
    });
 </script>
 
-<div class="view">
-   {#each data.structure as block}
+<div class="bg">
+   <div class="view">
+      {#each data.structure as block}
       <Block>
          {#each block as element}
          <Element>
             {#if element.type === "text"}
-               <TextElement data={data.texts[element.index]}></TextElement>
+            <TextElement data={data.texts[element.index]}></TextElement>
             {:else if element.type === "image"}
-               <ImageElement data={data.images[element.index]}></ImageElement>
+            <ImageElement data={data.images[element.index]}></ImageElement>
             {/if}
          </Element>
          {/each}
       </Block>
-   {/each}
+      {/each}
+   </div>
 </div>
 
 <style>
+   .bg {
+      width: 100%;
+      background-color: var(--custom-color-base);
+   }
+
    .view {
       max-width: 1000px;
       display: flex;
