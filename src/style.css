@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+   --color-bg: #000000;
+   --color-fg: #ffffff;
+}
+
+* {
+   box-sizing: border-box;
+   text-decoration: none;
+   padding: 0;
+   margin: 0;
+   border: none;
+}
+
+*:focus {
+   outline: none;
+}
