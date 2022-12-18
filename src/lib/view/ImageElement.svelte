@@ -1,5 +1,5 @@
 <script lang="ts">
-   import type { image } from "./types";
+   import type { image } from "../types";
    import { getImage } from "$lib/api";
 
    export let data: image;

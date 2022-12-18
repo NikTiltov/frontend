@@ -1,18 +1,36 @@
 <script lang="ts">
-   import type { text } from "./types";
+   import type { text } from "../types";
+   import { bind, onMount } from "svelte/internal";
    export let data: text;
+
+   let textarea: HTMLTextAreaElement;
+
+   function autoGrow() {
+      textarea.style.height = "1em";
+      textarea.style.height = textarea.scrollHeight + "px";
+   }
+
+   onMount(autoGrow);
 </script>
 
-<div class="text {data.style} {data.size}">
+<textarea 
+   class="text {data.style} {data.size}" 
+   bind:this={textarea} 
+   on:input={autoGrow}
+   >
    {data.text}
-</div>
+</textarea>
 
 <style>
    .text {
+      width: 100%;
+      border: 2px dashed var(--custom-color-contrast);
       font-family: 'Poppins', sans-serif;
       color: var(--custom-color-text);
       text-align: justify;
       white-space: pre-line;
+      resize: none;
+      overflow: hidden;
    }
 
    .normal {
