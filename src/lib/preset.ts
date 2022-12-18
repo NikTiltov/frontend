@@ -1,4 +1,4 @@
-import type { block, image, text } from "./blocks/types";
+import type { block, colors, image, portfolio, text } from "./types";
 
 export let default_struct: block[] = [
    [ { type: "text", index: 0 } ],
@@ -46,10 +46,17 @@ export let default_images: image[] = [
    { src: "" },
 ];
 
-export let default_colors = {
+export let default_colors: colors = {
    base: "#ffffff",
    text: "#000000",
-   primary: "#4b62dc",
-   seconrary: "#ab62e5",
    contrast: "#2e2c29",
+   primary: "#4b62dc",
+   secondary: "#ab62e5",
 };
+
+export let default_portfolio: portfolio = {
+   structure: default_struct,
+   colors: default_colors,
+   texts: default_texts,
+   images: default_images,
+}
