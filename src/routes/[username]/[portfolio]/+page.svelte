@@ -1,10 +1,10 @@
 <script lang="ts">
    import type { PageData } from "./$types";
    import { onMount } from "svelte";
-   import Block from "$lib/blocks/Block.svelte";
-   import Element from "$lib/blocks/Element.svelte";
-   import TextElement from "$lib/blocks/TextElement.svelte";
-   import ImageElement from "$lib/blocks/ImageElement.svelte";
+   import Block from "$lib/view/Block.svelte";
+   import Element from "$lib/view/Element.svelte";
+   import TextElement from "$lib/view/TextElement.svelte";
+   import ImageElement from "$lib/view/ImageElement.svelte";
    import updateColor from "$lib/palette/updateColor";
 
    export let data: PageData;
@@ -37,6 +37,7 @@
    .bg {
       width: 100%;
       background-color: var(--custom-color-base);
+      min-height: 100vh;
    }
 
    .view {
