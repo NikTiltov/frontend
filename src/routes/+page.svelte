@@ -8,7 +8,7 @@
    <div class="name">Portfolio You</div>
    <div class="divider" />
    <div class="divider" />
-   <Button action={() => goto("/creator")}>create</Button>
+   <Button action={() => goto("/editor")}>create</Button>
 </div>
 
 <style>
