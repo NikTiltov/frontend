@@ -1,20 +1,13 @@
 import type { PageLoad } from "./$types";
-import type { portfolio } from "$lib/types";
-import { getPortfolio } from "$lib/api";
-import { 
-   default_struct,
-   default_colors,
-   default_texts,
-   default_images
-} from "$lib/preset";
+import { default_portfolio } from "$lib/preset";
+import { env } from "$env/dynamic/public";
 
-export const load: PageLoad = async ({ params }) => {
-   // return {
-   //    structure: default_struct,
-   //    colors: default_colors,
-   //    texts: default_texts,
-   //    images: default_images,
-   // };
-   const json: { portfolio: portfolio } = await getPortfolio(params.username, params.portfolio);
-   return json.portfolio;
+export const load: PageLoad = async ({ params, fetch }) => {
+   let portfolio = default_portfolio;
+   // fetch(`${env.API_HOST}/${params.username}/${params.portfolio}`)
+   fetch(`${env.PUBLIC_API_HOST}/portfolio/open`)
+      .then(response => response.json())
+      .then(json => portfolio = json["portfolio"])
+      .catch(error => console.error(error));
+   return portfolio;
 };

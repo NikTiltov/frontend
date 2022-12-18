@@ -1,12 +1,12 @@
 <script lang="ts">
    import type { image } from "../types";
-   import { getImage } from "$lib/api";
+   import { env } from "$env/dynamic/public";
 
    export let data: image;
 </script>
 
 <div class="image">
-   <img src={getImage(data.src)} alt="">
+   <img src={`${env.PUBLIC_API_HOST}/${data.src}`} alt="">
 </div>
 
 <style>
