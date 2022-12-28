@@ -6,7 +6,7 @@
    const placeholder = "_";
 
    const form = {
-      login: "",
+      username: "",
       password: "",
    };
 
@@ -17,7 +17,9 @@
          method: "POST",
          body: JSON.stringify(form),
       }).then(response => response.json())
-      .then(result => console.log(result["token"]))
+      .then(result => {
+         localStorage.setItem("token", result["token"]);
+      })
       .catch(err => console.error(err));
    };
 </script>
@@ -27,7 +29,7 @@
    <div class="inputs">
       <div class="input">
          <div class="title">Username / Email</div>
-         <input type="text" {maxlength} {placeholder} bind:value={form.login}>
+         <input type="text" {maxlength} {placeholder} bind:value={form.username}>
       </div>
       <div class="input">
          <div class="title">Password</div>
