@@ -1,8 +1,7 @@
 <script lang="ts">
+   import { portfolio } from "$lib/stores";
    import type { colors } from "$lib/types";
    import ColorPanel from "./ColorPanel.svelte";
-
-   export let colors: colors;
 
    function toColorName(colorName: string) {
       return (colorName as keyof colors);
@@ -10,8 +9,8 @@
 </script>
 
 <div class="palette">
-   {#each Object.keys(colors) as colorName}
-      <ColorPanel {colorName} bind:value={colors[toColorName(colorName)]} />
+   {#each Object.keys($portfolio.colors) as colorName}
+      <ColorPanel {colorName} />
    {/each}
 </div>
 
