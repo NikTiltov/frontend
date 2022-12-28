@@ -13,11 +13,11 @@
    let error = "";
 
    const signUp = async () => {
-      await fetch(`${env.PUBLIC_API_HOST}/auth`, {
+      await fetch(`${env.PUBLIC_API_HOST}/sign-in`, {
          method: "POST",
          body: JSON.stringify(form),
       }).then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => console.log(result["token"]))
       .catch(err => console.error(err));
    };
 </script>

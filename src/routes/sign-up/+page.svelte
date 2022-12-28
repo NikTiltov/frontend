@@ -1,6 +1,7 @@
 <script lang="ts">
    import Button from "$lib/Button.svelte";
    import { env } from "$env/dynamic/public";
+   import { goto } from "$app/navigation";
 
    const maxlength = 30;
    const placeholder = "_";
@@ -14,11 +15,11 @@
    let error = "";
 
    const signUp = async () => {
-      await fetch(`${env.PUBLIC_API_HOST}/reg`, {
+      await fetch(`${env.PUBLIC_API_HOST}/sign-up`, {
          method: "POST",
          body: JSON.stringify(form),
       }).then(response => response.json())
-      .then(result => console.log(result))
+      .then(() => { goto("/sign-in");})
       .catch(err => console.error(err));
    };
 </script>
