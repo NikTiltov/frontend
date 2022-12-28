@@ -1,3 +1,8 @@
+export type PortfolioCard = {
+   name: string;
+   discription: string;
+};
+
 export type element = {
    type: string;
    index: number;
