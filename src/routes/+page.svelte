@@ -4,30 +4,63 @@
 </script>
 
 <div class="container">
-   <div class="divider" />
-   <div class="name">Portfolio You</div>
-   <div class="divider" />
-   <div class="divider" />
-   <Button action={() => goto("/editor")}>create</Button>
+   <h1>Portfolio <span>You</span></h1>
+   <div class="text">
+      Here <span>you</span> can show your skill.<br/>
+      Here the world can know about <span>you</span>.<br/>
+      Here you can tell about <span>yourself</span>!
+   </div>
+   <div class="btns">
+      <Button color="success" size="big" shadow="right" 
+         on:click={() => goto("/sign-in")}>
+         Sign In
+      </Button>
+      <Button color="primary" size="big" shadow="right" 
+         on:click={() => goto("/sign-up")}>
+         Sign Up
+      </Button>
+   </div>
 </div>
 
 <style>
    .container {
-      min-height: 100vh;
-      background-color: var(--color-bg);
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
+      gap: 20px;
    }
 
-   .name {
+   h1 {
+      text-shadow: 10px 0px var(--color-dark);
+      -webkit-text-stroke: 2px var(--color-dark);
+      color: var(--color-base);
+      font-size: 160px;
+      font-weight: 700;
       text-align: center;
-      color: var(--color-fg);
-      font-size: 128px;
-      font-family: 'Roboto mono', monospace;
    }
 
-   .divider {
-      height: 100px;
-   }     
+   h1 > span {
+      color: var(--color-error);
+   }
+
+   .text {
+      font-size: var(--font-size-big);
+      text-align: center;
+      line-height: 1.7em;
+      margin-bottom: 20px;
+   }
+
+   .text > span {
+      background-color: var(--color-primary);
+      border-radius: 20px;
+      padding: 0px 14px 5px 14px;
+      margin: 0px 8px;
+   }
+
+   .btns {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+   }
 </style>
