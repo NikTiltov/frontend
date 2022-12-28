@@ -1,36 +1,41 @@
 <script lang="ts">
-   import type { text } from "../types";
-   import { bind, onMount } from "svelte/internal";
-   export let data: text;
+   import type { editText } from "$lib/types";
+   import { portfolio } from "$lib/stores";
+   import { afterUpdate, onMount } from "svelte/internal";
 
+   export let block_id: number;
+   export let id: number;
+
+   $: data = $portfolio.getElement(block_id, id) as editText;
+   
    let textarea: HTMLTextAreaElement;
-
+   
    function autoGrow() {
       textarea.style.height = "1em";
       textarea.style.height = textarea.scrollHeight + "px";
    }
-
+   
    onMount(autoGrow);
+   afterUpdate(autoGrow);
 </script>
 
 <textarea 
-   class="text {data.style} {data.size}" 
-   bind:this={textarea} 
-   on:input={autoGrow}
-   >
-   {data.text}
-</textarea>
+   class="text {data.style} {data.size}"
+   placeholder="Write something..."
+   bind:this={textarea}
+   bind:value={data.text}
+   ></textarea>
 
 <style>
    .text {
       width: 100%;
-      border: 2px dashed var(--custom-color-contrast);
       font-family: 'Poppins', sans-serif;
       color: var(--custom-color-text);
       text-align: justify;
       white-space: pre-line;
       resize: none;
       overflow: hidden;
+      background: none;
    }
 
    .normal {
