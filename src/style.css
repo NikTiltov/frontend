@@ -1,19 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&display=swap');
 
 :root {
    --color-bg: #000000;
    --color-fg: #ffffff;
+
+   --color-base: #ffede0;
+   --color-dark: #010001;
+   --color-light: #ffffff;
+   --color-error: #ff4b36;
+   --color-primary: #2fb9ff;
+   --color-success: #63bf8b;
+   --color-warning: #ffc62f;
+
+   --font-size-small: 12px;
+   --font-size-medium: 16px;
+   --font-size-big: 24px;
+   --font-size-large: 40px;
 }
 
 * {
    box-sizing: border-box;
    text-decoration: none;
+   border: none;
    padding: 0;
    margin: 0;
-   border: none;
+   font-family: 'Barlow', sans-serif;
+   color: var(--color-dark);
 }
 
 *:focus {
    outline: none;
+}
+
+button {
+   cursor: pointer;
 }
