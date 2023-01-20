@@ -5,11 +5,6 @@
 
 <div class="container">
    <h1>Portfolio <span>You</span></h1>
-   <div class="text">
-      Here <span>you</span> can show your skill.<br/>
-      Here the world can know about <span>you</span>.<br/>
-      Here you can tell about <span>yourself</span>!
-   </div>
    <div class="btns">
       <Button color="success" size="big" shadow="right" 
          on:click={() => goto("/sign-in")}>

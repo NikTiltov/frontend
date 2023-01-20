@@ -1,7 +1,7 @@
 <script lang="ts">
    import Button from "$lib/Button.svelte";
    import { env } from "$env/dynamic/public";
-   import { goto } from "$app/navigation";
+   import { redirect } from "@sveltejs/kit";
 
    const maxlength = 30;
    const placeholder = "_";
@@ -19,7 +19,7 @@
          method: "POST",
          body: JSON.stringify(form),
       }).then(response => response.json())
-      .then(() => { goto("/sign-in");})
+      .then(() => { throw redirect(302, "/sign-in"); })
       .catch(err => console.error(err));
    };
 </script>

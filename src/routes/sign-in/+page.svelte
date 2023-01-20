@@ -13,6 +13,7 @@
    let error = "";
 
    const signUp = async () => {
+      localStorage.setItem("token", "zxczxczxc");
       await fetch(`${env.PUBLIC_API_HOST}/sign-in`, {
          method: "POST",
          body: JSON.stringify(form),
